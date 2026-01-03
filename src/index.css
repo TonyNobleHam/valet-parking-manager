@@ -1,0 +1,106 @@
+:root {
+  --bg-color: #E0E5EC;
+  --text-main: #4a5568;
+  --text-muted: #718096;
+  --shadow-light: -9px -9px 16px rgba(255,255,255, 0.6);
+  --shadow-dark: 9px 9px 16px rgba(163, 177, 198, 0.5);
+  --shadow-inset-light: inset -5px -5px 9px rgba(255,255,255, 0.7);
+  --shadow-inset-dark: inset 5px 5px 9px rgba(163, 177, 198, 0.5);
+  --primary-color: #667eea;
+  --danger-color: #e53e3e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+
+/* Neumorphic Utilities */
+.neu-card {
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow-dark), var(--shadow-light);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.neu-btn {
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow-dark), var(--shadow-light);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.neu-btn:active, .neu-btn.active {
+  box-shadow: var(--shadow-inset-dark), var(--shadow-inset-light);
+  transform: translateY(1px);
+}
+
+.neu-btn-danger {
+  color: var(--danger-color);
+}
+
+.neu-input {
+  width: 100%;
+  border: none;
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow-inset-dark), var(--shadow-inset-light);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: var(--text-main);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.neu-input:focus {
+  box-shadow: inset 7px 7px 12px rgba(163, 177, 198, 0.6), inset -7px -7px 12px rgba(255,255,255, 0.8), 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: var(--text-main);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
